@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+    archivebox:
+        image: nikisweeting/archivebox:latest
+        command: server 0.0.0.0:8867
+        stdin_open: true
+        tty: true
+        ports:
+            - 8867:8867
+        environment:
+            - USE_COLOR=True
+            - SHOW_PROGRESS=True
+        volumes:
+            - ./:/data

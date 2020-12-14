@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  hastebin:
+    container_name: hastebin
+    image: angristan/hastebin:latest
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "7777:7777"
+    environment:
+     - UID=4242
+     - GID=4242 

@@ -1,0 +1,11 @@
+version: '2.3'
+services:
+  byreqz.de:
+    container_name: httpd1
+    image: httpd
+    restart: unless-stopped
+    volumes:
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./:/usr/local/apache2/htdocs
+    ports:
+      - "85:80"

@@ -1,0 +1,7 @@
+version: "3.4"
+services:
+    endlessh:
+        image: harshavardhanj/endlessh:latest
+        ports:
+        - "21:2222"
+        restart: always

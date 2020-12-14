@@ -1,0 +1,11 @@
+version: '2.3'
+services:
+  privatebin:
+    container_name: privatebin
+    image: jgeusebroek/privatebin
+    restart: unless-stopped
+    volumes:
+      - ./:/privatebin/cfg
+      - ./data:/privatebin/data
+    ports:
+      - "8956:80"

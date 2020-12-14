@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    dashmachine:
+        image: rmountjoy/dashmachine
+        container_name: dashmachine
+        volumes:
+            - ./:/dashmachine/dashmachine/user_data
+        ports:
+            - 5000:5000
+        restart: unless-stopped

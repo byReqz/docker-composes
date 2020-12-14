@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  thelounge:
+    image: thelounge/thelounge
+    restart: always
+    ports:
+      - 6738:9000
+    volumes:
+      - ./:/var/opt/thelounge
+    container_name: thelounge
