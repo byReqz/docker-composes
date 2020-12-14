@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  speed:
+    container_name: "speed"
+    image: adolfintel/speedtest
+    environment:
+# sets site title
+      - TITLE=LibreSpeed
+      - TELEMETRY=false
+# set to true if telemetry is enabled
+      - ENABLE_ID_OBFUSCATION=false
+# set to true if telemetry is enabled 
+      - REDACT_IP_ADDRESSES=false
+      - PASSWORD=...
+# needed when telemetry is enabled to comply with gdpr
+      - EMAIL=...
+# required when serving lots of requests
+#      - IPINFO_APIKEY=
+# disables isp and distance querying
+      - DISABLE_IPINFO=false
+# mi, km or nothing for disabled
+      - DISTANCE=km
+# webui port
+      - WEBPORT=80
+    ports:
+      - 80:80
